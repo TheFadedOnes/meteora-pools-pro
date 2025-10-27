@@ -1,0 +1,14 @@
+{
+    "name": "meteora-pools-pro",
+    "version": "1.0.0",
+    "description": "Meteora Pools Dashboard",
+    "main": "backend/server.js",
+    "scripts": {
+      "start": "node backend/server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "cors": "^2.8.5",
+      "node-cron": "^3.0.3"
+    }
+  }

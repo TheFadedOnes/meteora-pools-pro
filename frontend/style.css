@@ -1,0 +1,310 @@
+/* Variables for consistent theming */
+:root {
+    --primary: #00B7EB; /* Electric blue */
+    --accent: #FF69B4; /* Hot pink */
+    --border: #9400D3; /* Dark violet */
+    --text-secondary: #A9A9A9; /* Dim gray */
+    --bg: #000000; /* Pure black */
+    --card-bg: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--primary);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* Header */
+header {
+    background: var(--bg);
+    color: var(--accent);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    max-width: 1500px;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: rgba(55, 65, 81, 0.7);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab.active {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.tab:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Time Display */
+.time-display {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--text-secondary);
+}
+
+.time-display span {
+    margin: 0 1rem;
+}
+
+/* Loading State */
+#loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2em;
+    color: var(--primary);
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+thead {
+    background: var(--bg);
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+}
+
+th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+tr:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Pool Info */
+.pool-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.pool-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pool-info a:hover {
+    color: var(--primary);
+}
+
+.pool-info .address {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    word-break: break-all;
+    max-width: 250px;
+}
+
+/* Price and Stats */
+.price-change {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 60px;
+}
+
+.positive {
+    background: rgba(0, 0, 0, 0.7);
+    color: #d1fae5;
+}
+
+.negative {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fee2e2;
+}
+
+/* Strategies */
+.strategy-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.strategy-btn {
+    padding: 0.3rem 0.9rem;
+    border: none;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: rgba(75, 85, 99, 0.7);
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.highlight {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.strategy-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Status Bar */
+.status-bar {
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.status-bar .refresh {
+    cursor: pointer;
+    color: var(--accent);
+    transition: var(--transition);
+}
+
+.status-bar .refresh:hover {
+    color: var(--primary);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    margin: 5% auto;
+    box-shadow: var(--shadow);
+    text-align: left;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.modal-close {
+    cursor: pointer;
+    float: right;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--primary);
+}
+
+.modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.modal-content th, .modal-content td {
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.modal-content th {
+    background: var(--bg);
+    color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .tabs { flex-direction: column; align-items: center; }
+    .tab { width: 80%; margin: 0.5rem 0; }
+    th, td { padding: 1rem; }
+    .pool-info .address { max-width: 180px; }
+}
+
+@media (max-width: 800px) {
+    header { padding: 1rem; }
+    .logo { font-size: 1.7rem; }
+    .pool-info .address { font-size: 0.7rem; max-width: 120px; }
+    .strategy-buttons { flex-direction: column; }
+    .status-bar { flex-direction: column; gap: 1rem; }
+}
